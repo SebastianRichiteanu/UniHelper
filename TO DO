@@ -1,4 +1,10 @@
 
-- calendar
-
+- calendar (
+            homework: yello   id: idS_idHm
+            test: orange      id: idS_t
+            exam: red         id: idS_e
+            )
+            pt asta ar cam trb sa adaug un camp nou in clasa Hm cu id (si respectiv 2 in Sub pt test si exam?)
+            pt asta ar cam trb sa fac o functie sa mi ia id max ?
+            sau sa fac o functie sa mi caute primul id liber?????
 - beauty
