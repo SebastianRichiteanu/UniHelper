@@ -1,20 +1,11 @@
-- nume apar doar dupa back?
+- strica meniul titlul mult prea mare
+- font putin mai mare pe butoane? 
+- cam mare fontu asta nu crezi???
 
-- beauty
+- nume apar doar dupa back??????????????? 
 
+- imparte codul xD
 
-- main :
-      - buton sus add a subject
-      - fa mai frumos afisarea pt subiecte
-- ShowSub :
-      - butoane sus cu add a homework si back
-      - butoane jos cu edit this subject and remove
-      - fa mai frumos afisarea pt teme 
-- AddSub :
-      - butoane sus cu submit si back
-- AddHw :
-      - butoane sus cu submit si back
-- EditSub:
-      - butoane sus cu submit si back
-- EditHw :
-      - butoane sus cu submit si back
+background: #282a36
+red: #ff5555
+blue: #6272a4
