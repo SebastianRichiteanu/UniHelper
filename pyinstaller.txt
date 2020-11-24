@@ -1,0 +1,1 @@
+pyinstaller.exe -w --hidden-import "babel.numbers" --add-data "save.p;." --icon=icon.ico .\UniHelper.py
