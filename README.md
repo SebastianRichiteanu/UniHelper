@@ -7,11 +7,8 @@
 **UniHelper** retains all important dates as well as useful links for your homeworks, tests and exams.
 
 **Installation** 
-	1. Standalone:
-		1. Open the Standalones folder in this project. Download the archive for your Operating System, Unzip it and run UniHelper.
-		1. *Note that this app was tested on Windows 10 20H2 and Ubuntu 20.04*
-	* Clone:
-		* Clone the Files folder and run UniHelper with Python3
+	- Standalone:
+	- Clone:
 		
 
 Usage: The next section is usage, in which you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.
