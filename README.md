@@ -17,7 +17,7 @@
 - Add Subject
 	- To add a subject just press Add a Subject
 	- Enter the information for the new subject 
-	- ** When you don't know the date for a deadline, test, exam just press not set yet **
+	- **When you don't know the date for a deadline, test, exam just press not set yet**
 	- Example : ![Example Subject](https://github.com/SebastianRichiteanu/UniHelper/blob/main/README/1.jpeg)
 	- Press Submit
 - Add Homework
@@ -28,7 +28,7 @@
 - Edit them
 	- To edit a subject or a homework just press Edit This Homework/Subject
 	- Edit them 
-	- ** Note that if you want to keep the old date just check "keep the old date" **
+	- **Note that if you want to keep the old date just check "keep the old date"**
 	- Press Submit
 - Remove them
 	- To Remove them just press Remove This HW/Subject
