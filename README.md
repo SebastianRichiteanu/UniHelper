@@ -17,7 +17,7 @@
 - Add a Subject
 	- To add a subject just press Add a Subject
 	- Enter the information for the new subject 
-	- **When you don't know the date for a test, exam just check "not set yet"**
+	- **When you don't know the date for a test and/or an exam just check "not set yet"**
 	- Example : ![Example Subject](https://github.com/SebastianRichiteanu/UniHelper/blob/main/README/1.jpg)
 	- Press Submit
 - Add a Homework
