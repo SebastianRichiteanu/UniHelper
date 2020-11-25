@@ -1,5 +1,5 @@
 <p align="center">
-	<img alt="Zebra" src="https://github.com/SebastianRichiteanu/UniHelper/blob/main/Files/icon.ico" width="100">
+	<img alt="Zebra UniHelper" src="https://github.com/SebastianRichiteanu/UniHelper/blob/main/Files/icon.ico" width="150">
 </p>
 
 Project name: Your project’s name is the first thing people will see upon scrolling down to your README, and is included upon creation of your README file.
