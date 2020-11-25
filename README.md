@@ -17,7 +17,7 @@
 - Add Subject
 	- To add a subject just press Add a Subject
 	- Enter the information for the new subject
-	- Example : ![Image of Zebra](https://github.com/SebastianRichiteanu/UniHelper/blob/main/README/.jpeg)
+	- Example : ![Example Subject](https://github.com/SebastianRichiteanu/UniHelper/blob/main/README/1.jpeg)
 - Add Homework
 
 - Edit them
