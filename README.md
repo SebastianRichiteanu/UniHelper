@@ -17,13 +17,13 @@
 - Add Subject
 	- To add a subject just press Add a Subject
 	- Enter the information for the new subject 
-	- **When you don't know the date for a deadline, test, exam just check "not set yet"**
+	- **When you don't know the date for a test, exam just check "not set yet"**
 	- Example : ![Example Subject](https://github.com/SebastianRichiteanu/UniHelper/blob/main/README/1.jpeg)
 	- Press Submit
 - Add Homework
 	- To add a homework just open a subject and press Add a Homework
 	- Enter the information for the new homework
-	- **When you don't know the date for a deadline, test, exam just check "not set yet"**
+	- **When you don't know the date for the deadline just check "not set yet"**
 	- Example : ![Example Homework](https://github.com/SebastianRichiteanu/UniHelper/blob/main/README/2.jpeg)
 	- Press Submit
 - Edit them
@@ -33,3 +33,11 @@
 	- Press Submit
 - Remove them
 	- To Remove them just press Remove This HW/Subject
+
+**Colors used:**
+- background: #282a36
+- red: #ff5555
+- green: #379c1a
+- blue: #626AA4
+- magenta: #AE8ABE
+
