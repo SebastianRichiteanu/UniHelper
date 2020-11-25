@@ -14,4 +14,12 @@
 - Clone:
 	- Clone the Files folder and run UniHelper with Python3
 
-Usage: The next section is usage, in which you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.
+**Usage:** 
+
+- Add Subject
+
+- Add Homework
+
+- Edit them
+
+- Remove them
