@@ -24,7 +24,7 @@
 	- To add a homework just open a subject and press Add a Homework
 	- Enter the information for the new homework
 	- **When you don't know the date for the deadline just check "not set yet"**
-	- Example : ![Example Homework](https://github.com/SebastianRichiteanu/UniHelper/blob/main/README/2.jpeg)
+	- Example : ![Example Homework](https://github.com/SebastianRichiteanu/UniHelper/blob/main/README/2.jpg)
 	- Press Submit
 - Edit them
 	- To edit a subject or a homework just press Edit This Homework/Subject
