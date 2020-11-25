@@ -6,7 +6,7 @@
 
 **UniHelper** retains all important dates as well as useful links for your homeworks, tests and exams.
 
-**Installation** 
+**Installation:** 
 	
 - Standalone:
 	- Open the Standalones folder in this project. Download the archive for your Operating System, Unzip it and run UniHelper
