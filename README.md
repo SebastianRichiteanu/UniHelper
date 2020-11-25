@@ -1,5 +1,5 @@
 <p align="center">
-	<img alt="Zebra UniHelper" src="https://github.com/SebastianRichiteanu/UniHelper/blob/main/Files/icon.ico" width="150">
+	<img alt="Zebra UniHelper" src="https://github.com/SebastianRichiteanu/UniHelper/blob/main/README/icon.ico" width="150">
 </p>
 
 **UniHelper** it's a simple University Helper app created with Python 3.8 (using Tkinter, Pickle, DateTime and WebBrowser).
