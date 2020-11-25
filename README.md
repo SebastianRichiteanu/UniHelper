@@ -4,7 +4,7 @@
 
 **UniHelper** it's a simple University Helper app created with Python 3.8 (using Tkinter, Pickle, DateTime and WebBrowser).
 
-**UniHelper** retain all important dates as well as useful links for your homeworks, tests and exams.
+**UniHelper** retains all important dates as well as useful links for your homeworks, tests and exams.
 
 **Installation** 
 	- Standalone:
