@@ -14,13 +14,13 @@
 
 **Usage:** 
 
-- Add Subject
+- Add a Subject
 	- To add a subject just press Add a Subject
 	- Enter the information for the new subject 
 	- **When you don't know the date for a test, exam just check "not set yet"**
 	- Example : ![Example Subject](https://github.com/SebastianRichiteanu/UniHelper/blob/main/README/1.jpg)
 	- Press Submit
-- Add Homework
+- Add a Homework
 	- To add a homework just open a subject and press Add a Homework
 	- Enter the information for the new homework
 	- **When you don't know the date for the deadline just check "not set yet"**
@@ -40,4 +40,3 @@
 - green: #379c1a
 - blue: #626AA4
 - magenta: #AE8ABE
-
