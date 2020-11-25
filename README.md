@@ -1,6 +1,4 @@
-<p align="center">
-	<img alt="Zebra UniHelper" src="https://github.com/SebastianRichiteanu/UniHelper/blob/main/README/icon.ico" width="150">
-</p>
+![Image of Zebra](https://github.com/SebastianRichiteanu/UniHelper/blob/main/README/icon.ico)
 
 **UniHelper** it's a simple University Helper app created with Python 3.8 (using Tkinter, Pickle, DateTime and WebBrowser).
 
@@ -17,7 +15,8 @@
 **Usage:** 
 
 - Add Subject
-
+	- To add a subject just press Add a Subject
+	
 - Add Homework
 
 - Edit them
