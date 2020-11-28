@@ -1,12 +1,15 @@
 from globals import *
 
+
 def clear_window():
     l = root.winfo_children()
     for x in l:
         x.destroy()
 
+
 def sort_hws(l):
-    l.sort(key = lambda hm: hm.deadline)
+    l.sort(key=lambda hm: hm.deadline)
+
 
 def format_date(sir):
     if sir[0] == 'n':
@@ -14,6 +17,7 @@ def format_date(sir):
     else:
         sir2 = sir[6]+sir[7]+sir[2]+sir[3]+sir[4]+sir[5]+sir[0]+sir[1]
         return sir2
+
 
 def return_date(sir):
     if sir[0] == 'n':
@@ -37,10 +41,12 @@ def split(sir):
     s += sir
     return s
 
+
 def verif_site(sir):
     if sir[:4] == "http" or sir[:3] == "www":
         return 1
     return 0
+
 
 def access_site(sir):
     webbrowser.open_new(sir)
