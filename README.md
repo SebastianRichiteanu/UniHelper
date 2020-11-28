@@ -6,8 +6,10 @@
 
 **Installation:** 
 	
-- Standalone:
-	- Open the Standalone folder in this project. Download the archive for your Operating System, Unzip it and run UniHelper
+- Standalone (Python not needed):
+	- Download the archive for your Operating System, Unzip it and run UniHelper
+		- Windows 10: https://drive.google.com/file/d/1MqyodVZGWMUWIePH20IkTU4jHE98XNlD/view?usp=sharing
+		- Ubuntu: https://drive.google.com/file/d/1LL8Jub3_zLw_WmSfMtO2aj-7qZzTOukt/view?usp=sharing
 	- *Note that this app was tested on Windows 10 20H2 and Ubuntu 20.04*
 - Clone:
 	- Clone the Files folder and run UniHelper with Python3
