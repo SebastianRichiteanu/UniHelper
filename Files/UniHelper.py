@@ -30,11 +30,11 @@ def AddSubWnd():
     nameText.grid(row=1, column=1)
     testLabel = Label(root, text="Date of the partial test:", background=colors['bg'], fg=colors['label_fg'], font=Font)
     testLabel.grid(row=2, column=0, pady=10)
-    testCal = Calendar(root, selectmode="day", date_pattern='dd/mm/yy')
+    testCal = Calendar(root, selectmode="day", date_pattern=dp)
     testCal.grid(row=2, column=1, pady=10, sticky="nsew")
     examLabel = Label(root, text="Date of the exam:", background=colors['bg'], fg=colors['label_fg'], font=Font)
     examLabel.grid(row=3, column=0)
-    examCal = Calendar(root, selectmode="day", date_pattern='dd/mm/yy')
+    examCal = Calendar(root, selectmode="day", date_pattern=dp)
     examCal.grid(row=3, column=1, pady=10, sticky="nsew")
     v1 = IntVar()
     testChk = Checkbutton(root, text="Partial " + nsy , variable=v1, bg=colors['bg'], fg=colors['chk_fg'],
@@ -83,29 +83,29 @@ def EditSubWnd(ind):
     curTestLabel = Label(root, text="Current date of the Partial Test:",
                          background=colors['bg'], fg=colors['label_fg'], font=Font)
     curTestLabel.grid(row=3, column=0, pady=7)
-    curTestLabel = Label(root, text=l[ind].test, background=colors['bg'], fg=colors['label_fg'], font=Font)
+    curTestLabel = Label(root, text= format_date(l[ind].test), background=colors['bg'], fg=colors['label_fg'], font=Font)
     curTestLabel.grid(row=3, column=1)
     testLabel = Label(root, text="New date for the partial test:", background=colors['bg'], fg=colors['label_fg'], font=Font)
     testLabel.grid(row=4, column=0)
     c = return_date(l[ind].test)
     if c != -1:
-        testCal = Calendar(root, selectmode="day", date_pattern='dd/mm/yy', day=c[0], month=c[1], year=c[2])
+        testCal = Calendar(root, selectmode="day", date_pattern=dp, day=c[0], month=c[1], year=c[2])
     else:
-        testCal = Calendar(root, selectmode="day", date_pattern='dd/mm/yy')
+        testCal = Calendar(root, selectmode="day", date_pattern=dp)
     testCal.grid(row=4, column=1, pady=10, sticky="nsew")
 
     curExamLabel = Label(root, text="Current date of the Exam:", background=colors['bg'],
                          fg=colors['label_fg'], font=Font)
     curExamLabel.grid(row=5, column=0)
-    curExamLabel2 = Label(root, text=l[ind].exam, background=colors['bg'], fg=colors['label_fg'], font=Font)
+    curExamLabel2 = Label(root, text=format_date(l[ind].exam), background=colors['bg'], fg=colors['label_fg'], font=Font)
     curExamLabel2.grid(row=5, column=1)
     examLabel = Label(root, text="New date for the exam:", background=colors['bg'], fg=colors['label_fg'], font=Font)
     examLabel.grid(row=6, column=0)
     c = return_date(l[ind].exam)
     if c != -1:
-        examCal = Calendar(root, selectmode="day", date_pattern='dd/mm/yy', day=c[0], month=c[1], year=c[2])
+        examCal = Calendar(root, selectmode="day", date_pattern=dp, day=c[0], month=c[1], year=c[2])
     else:
-        examCal = Calendar(root, selectmode="day", date_pattern='dd/mm/yy')
+        examCal = Calendar(root, selectmode="day", date_pattern=dp)
     examCal.grid(row=6, column=1, pady=10, sticky="nsew")
     v1 = IntVar()
     testChk = Checkbutton(root, text="Keep the old date for Partial Test", variable=v1, bg=colors['bg'], fg=colors['chk_fg'],
@@ -165,7 +165,7 @@ def AddHwWnd(ind):
 
     deadlineLabel = Label(root, text="Deadline: ", background=colors['bg'], fg=colors['label_fg'], font=Font)
     deadlineLabel.grid(row=1, column=0)
-    deadlineCal = Calendar(root, selectmode="day", date_pattern='dd/mm/yy')
+    deadlineCal = Calendar(root, selectmode="day", date_pattern=dp)
     deadlineCal.grid(row=1, column=1, sticky="nsew", pady=20)
     exercLabel = Label(root, text="Subjects (web link or plain text): ", background=colors['bg'], fg=colors['label_fg'], font=Font)
     exercLabel.grid(row=2, column=0, pady=20)
@@ -207,14 +207,14 @@ def EditHwWnd(hw, i, j):
     submit.grid(row=0, column=0)
     back = Button(root, text="Back", width=width['edit_hw'], height=height['top'], font=Font, bg=colors['back'], command=lambda i=i: OpenSub(i))
     back.grid(row=0, column=1)
-    deadlineLabel = Label(root, text="Current deadline: " + hw.deadline, background=colors['bg'],
+    deadlineLabel = Label(root, text="Current deadline: " + format_date(hw.deadline), background=colors['bg'],
                           fg=colors['label_fg'], font=Font)
     deadlineLabel.grid(row=1, column=0)
     c = return_date(l[i].hws[j].deadline)
     if c != -1:
-        deadlineCal = Calendar(root, selectmode="day", date_pattern='dd/mm/yy', day=c[0], month=c[1], year=c[2])
+        deadlineCal = Calendar(root, selectmode="day", date_pattern=dp, day=c[0], month=c[1], year=c[2])
     else:
-        deadlineCal = Calendar(root, selectmode="day", date_pattern='dd/mm/yy')
+        deadlineCal = Calendar(root, selectmode="day", date_pattern=dp)
     deadlineCal.grid(row=1, column=1, sticky="nsew", pady=20)
 
     label_inter1 = Label(root, text="Subjects:", background=colors['bg'], fg=colors['label_fg'], font=Font)
@@ -291,10 +291,10 @@ def OpenSub(ind):
     subNameLabel = Label(second_frame, text="Name: " + l[ind].name, background=colors['bg'], fg=colors['label_fg'], font=Font,
                          width=width['open_sub'])
     subNameLabel.grid(row=0, column=0)
-    subTestLabel = Label(second_frame, text="Partial test date: " + l[ind].test, background=colors['bg'], fg=colors['label_fg'],
+    subTestLabel = Label(second_frame, text="Partial test date: " + format_date(l[ind].test), background=colors['bg'], fg=colors['label_fg'],
                          font=Font)
     subTestLabel.grid(row=1, column=0)
-    subExamLabel = Label(second_frame, text="Exam date: " + l[ind].exam, background=colors['bg'], fg=colors['label_fg'], font=Font)
+    subExamLabel = Label(second_frame, text="Exam date: " + format_date(l[ind].exam), background=colors['bg'], fg=colors['label_fg'], font=Font)
     subExamLabel.grid(row=2, column=0)
     row = 3
     if len(l[ind].hws) == 0:
@@ -304,7 +304,7 @@ def OpenSub(ind):
         for j in range(len(l[ind].hws)):
             canvas_det = Canvas(second_frame, highlightthickness=0, bg=colors['bg'])
             canvas_det.grid(row=row, column=0, pady=20)
-            sir1 = "HW NO " + str(j + 1) + " | Deadline: " + l[ind].hws[j].deadline
+            sir1 = "HW NO " + str(j + 1) + " | Deadline: " + format_date(l[ind].hws[j].deadline)
             sir2 = split(l[ind].hws[j].exerc)
             sir3 = split(l[ind].hws[j].submit)
             subHwLabel1 = Label(canvas_det, text=sir1, background=colors['bg'], fg=colors['label_fg'], font=Font)
@@ -398,8 +398,8 @@ def main():
     canvas_cal.pack_propagate(False)
     canvas_cal.pack()
 
-    cal = Calendar(canvas_cal, selectmode="day", date_pattern='dd/mm/yy'
-                   , tooltipdelay=2, tooltipalpha=0.8, selectbackground="white",
+    cal = Calendar(canvas_cal, selectmode="day", date_pattern=dp,
+                   tooltipdelay=2, tooltipalpha=0.8, selectbackground="white",
                    selectforeground="black", weekendbackground="white", weekendforeground="black",
                    othermonthbackground="#DCDCDC", othermonthwebackground="#DCDCDC")
     cal.pack(expand=True, fill='both')

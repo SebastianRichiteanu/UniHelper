@@ -19,6 +19,7 @@ root.resizable(False, False)
 Font = font.Font(family='Helvetica', size=13, weight='bold')
 
 nsy = "not set yet"
+dp = "yy/mm/dd"
 
 colors = {  
     "bg":"#282a36",

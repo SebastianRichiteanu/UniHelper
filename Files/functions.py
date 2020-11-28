@@ -1,39 +1,27 @@
 from globals import *
 
-
 def clear_window():
     l = root.winfo_children()
     for x in l:
         x.destroy()
 
-
 def sort_hws(l):
-    for i in range(len(l)):
-        for j in range(i + 1, len(l)):
-            if l[i].deadline[0] == 'n' and l[j].deadline[0] != 'n':
-                l[i], l[j] = l[j], l[i]
-            elif l[i].deadline[0] != 'n' and l[j].deadline[0] != 'n':
-                zi = int(l[i].deadline[0]) * 10 + int(l[i].deadline[1])
-                zj = int(l[j].deadline[0]) * 10 + int(l[j].deadline[1])
-                li = int(l[i].deadline[3]) * 10 + int(l[i].deadline[4])
-                lj = int(l[j].deadline[3]) * 10 + int(l[j].deadline[4])
-                yi = int(l[i].deadline[6]) * 10 + int(l[i].deadline[7])
-                yj = int(l[j].deadline[6]) * 10 + int(l[j].deadline[7])
-                if yi > yj:
-                    l[i], l[j] = l[j], l[i]
-                elif yi == yj and li > lj:
-                    l[i], l[j] = l[j], l[i]
-                elif yi == yj and li == lj and zi > zj:
-                    l[i], l[j] = l[j], l[i]
+    l.sort(key = lambda hm: hm.deadline)
 
+def format_date(sir):
+    if sir[0] == 'n':
+        return sir
+    else:
+        sir2 = sir[6]+sir[7]+sir[2]+sir[3]+sir[4]+sir[5]+sir[0]+sir[1]
+        return sir2
 
 def return_date(sir):
     if sir[0] == 'n':
         return -1
     t = [0, 0, 0]
-    t[0] = int(sir[0]) * 10 + int(sir[1])
+    t[0] = int(sir[6]) * 10 + int(sir[7])
     t[1] = int(sir[3]) * 10 + int(sir[4])
-    t[2] = int(sir[6]) * 10 + int(sir[7])
+    t[2] = int(sir[0]) * 10 + int(sir[1]) + 2000
     return t
 
 
@@ -61,9 +49,9 @@ def access_site(sir):
 def create_date(sir):
     if sir[0] == 'n':
         return -1
-    d = int(sir[0]) * 10 + int(sir[1])
+    d = int(sir[6]) * 10 + int(sir[7])
     m = int(sir[3]) * 10 + int(sir[4])
-    y = int(sir[6]) * 10 + int(sir[7])
+    y = int(sir[0]) * 10 + int(sir[1])
     y += 2000
     dat = datetime.date(y, m, d)
     return dat
