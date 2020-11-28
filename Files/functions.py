@@ -49,6 +49,10 @@ def split(sir):
     s += sir
     return s
 
+def verif_site(sir):
+    if sir[:4] == "http" or sir[:3] == "www":
+        return 1
+    return 0
 
 def access_site(sir):
     webbrowser.open_new(sir)
