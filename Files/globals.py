@@ -7,7 +7,7 @@ import pickle
 import datetime
 import webbrowser
 
-global l, myFont, colors, height, width, nsy
+global l, events, myFont, colors, height, width, nsy
 
 nsy = "not set yet"
 dp = "yy/mm/dd"
@@ -52,6 +52,10 @@ width = {
 
 l = []
 l = pickle.load(open("save.p", "rb"))
+
+events = {}
+events = pickle.load(open("save_ev.p", "rb"))
+
 root = Tk()
 root.title('UniHelper')
 root.geometry("800x800")

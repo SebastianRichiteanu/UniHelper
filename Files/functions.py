@@ -63,43 +63,19 @@ def create_date(sir):
     return dat
 
 
-def add_event(dict, date, col):
-    if date[0] != 'n':
-        dict[date] = col
+def add_event(data, type, name):
+    if data[0] == 'n':
+        return
+    if data not in events.keys():
+        events[data] = ([], [], [])
+    events[data][type].append(name)
+    pickle.dump(events, open("save_ev.p", "wb"))
 
 
-def load_events_color(dict):
-    for sub in l:
-        for hm in sub.hws:
-            if hm.deadline not in dict:
-                add_event(dict, hm.deadline, 1)
-        if sub.test not in dict or (sub.test in dict and dict[sub.test] < 2):
-            add_event(dict, sub.test, 2)
-        if sub.exam not in dict or (sub.exam in dict and dict[sub.exam] < 3):
-            add_event(dict, sub.exam, 3)
-
-
-def load_events_text(dict):
-    for sub in l:
-        if sub.exam[0] != 'n':
-            sir = ""
-            if sub.exam in dict.keys():
-                sir = dict[sub.exam] + '\n'
-            sir += "Exam for " + sub.name
-            dict[sub.exam] = sir
-    for sub in l:
-        if sub.test[0] != 'n':
-            sir = ""
-            if sub.test in dict.keys():
-                sir = dict[sub.test] + '\n'
-            sir += "Partial test for " + sub.name
-            dict[sub.test] = sir
-    for sub in l:
-        for i in range(len(sub.hws)):
-            hm = sub.hws[i]
-            sir = ""
-            if hm.deadline != 'n':
-                if hm.deadline in dict.keys():
-                    sir = dict[hm.deadline] + '\n'
-                sir += "Homework " + str(i + 1) + " for " + sub.name
-                dict[hm.deadline] = sir
+def remove_event(data, type, name):
+    if data[0] == 'n':
+        return
+    events[data][type].remove(name)
+    if (not events[data][0]) and (not events[data][1]) and (not events[data][2]):
+        del events[data]
+    pickle.dump(events, open("save_ev.p", "wb"))

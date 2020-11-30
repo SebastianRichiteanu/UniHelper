@@ -16,6 +16,8 @@ def AddSubFct(name, test, exam, v1, v2):
     newSub = Subject(name=name, test=test, exam=exam)
     l.append(newSub)
     pickle.dump(l, open("save.p", "wb"))
+    add_event(exam, 0, name)
+    add_event(test, 1, name)
     main()
 
 
@@ -72,13 +74,20 @@ def EditSubFct(name, test, exam, ind, v1, v2):
 
     if v1.get() == 1:
         test = l[ind].test
+    else:
+        remove_event(l[ind].test, 1, name)
+        add_event(test, 1, name)
     if v2.get() == 1:
         exam = l[ind].exam
+    else:
+        remove_event(l[ind].exam, 0, name)
+        add_event(exam, 0, name)
 
     l[ind].name = name
     l[ind].test = test
     l[ind].exam = exam
     pickle.dump(l, open("save.p", "wb"))
+
     OpenSub(ind)
 
 
@@ -158,6 +167,8 @@ def EditSubWnd(ind):
 
 
 def RmvSubFct(ind):
+    remove_event(l[ind].exam, 0, l[ind].name)
+    remove_event(l[ind].test, 1, l[ind].name)
     del l[ind]
     pickle.dump(l, open("save.p", "wb"))
     main()
@@ -199,6 +210,7 @@ def AddHwFct(ind, deadline, exerc, submit, v1):
     l[ind].hws.append(newHw)
     sort_hws(l[ind].hws)
     pickle.dump(l, open("save.p", "wb"))
+    add_event(deadline, 2, l[ind].name)
     OpenSub(ind)
 
 
@@ -247,6 +259,9 @@ def EditHwFct(i, j, dl, ex, sub, v1):
         return
     if v1.get() == 1:
         dl = l[i].hws[j].deadline
+    else:
+        remove_event(l[i].hws[j].deadline, 2, l[i].name)
+        add_event(dl, 2, l[i].name)
     if ex == "":
         ex = l[i].hws[j].exerc
     if sub == "":
@@ -323,6 +338,7 @@ def EditHwWnd(hw, i, j):
 
 
 def RmvHwFct(ind, j):
+    remove_event(l[ind].hws[j].deadline, 2, l[ind].name)
     del l[ind].hws[j]
     pickle.dump(l, open("save.p", "wb"))
     OpenSub(ind)
@@ -468,13 +484,6 @@ def OpenSub(ind):
 def main():
     clear_window()
 
-    ev_color = {}
-    ev_color.clear()
-    ev_text = {}
-    ev_text.clear()
-    load_events_color(ev_color)
-    load_events_text(ev_text)
-
     canvas_main = Canvas(
         root, width=width['full'], height=height['canvas_half'], highlightthickness=0, bg=colors['bg'])
     canvas_main.pack()
@@ -529,23 +538,34 @@ def main():
     canvas_cal.pack_propagate(False)
     canvas_cal.pack()
 
-    cal = Calendar(canvas_cal, selectmode="day", date_pattern=dp,
-                   tooltipdelay=2, tooltipalpha=0.8, selectbackground="white",
-                   selectforeground="black", weekendbackground="white", weekendforeground="black",
+    cal = Calendar(canvas_cal, selectmode="none", date_pattern=dp,
+                   tooltipdelay=2, tooltipalpha=0.8,
+                   weekendbackground="white", weekendforeground="black", selectbackground="white",
+                   selectforeground="black",
                    othermonthbackground="#DCDCDC", othermonthwebackground="#DCDCDC")
     cal.pack(expand=True, fill='both')
 
-    for ev in ev_color:
+    for ev in events:
         data = create_date(ev)
-        txt = ev_text[ev]
+        txt = ""
+        for x in events[ev][0]:
+            txt += "Exam for " + x + '\n'
+        for x in events[ev][1]:
+            txt += "Test for " + x + '\n'
+        for x in events[ev][2]:
+            txt += "Homework for " + x + '\n'
         cal.calevent_create(data, txt, ev)
-        if ev_color[ev] == 1:
-            cal.tag_config(
-                ev, background=colors['homework'], foreground='black')
-        elif ev_color[ev] == 2:
-            cal.tag_config(ev, background=colors['test'], foreground='black')
+        if events[ev][0]:
+            cal.tag_config(ev, background=colors['exam'], foreground='black', selectbackground=colors['exam'],
+                           selectforeground="black")
+        elif events[ev][1]:
+            cal.tag_config(ev, background=colors['test'], foreground='black', selectbackground=colors['test'],
+                           selectforeground="black")
         else:
-            cal.tag_config(ev, background=colors['exam'], foreground='black')
+            cal.tag_config(ev, background=colors['homework'], foreground='black', selectbackground=colors['homework'],
+                           selectforeground="black")
+
     root.mainloop()
+
 
 main()
